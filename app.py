@@ -1,7 +1,7 @@
 import streamlit as st
 import pickle
 import requests
-from config import TMDB_API_KEY
+TMDB_API_KEY = st.secrets["TMDB_API_KEY"]
 from difflib import get_close_matches
 
 movies = pickle.load(open('movies.pkl', 'rb'))
