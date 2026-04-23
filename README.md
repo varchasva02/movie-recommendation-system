@@ -3,7 +3,7 @@
 A content-based movie recommendation system built with Python and Machine Learning that suggests similar movies based on genres, keywords, and plot overview.
 
 ## 🌍 Live Demo
-[Click here to try the app!][(YOUR_STREAMLIT_URL_HERE)](https://movie-recommendation-system-lknhvdju4agg3wnzzpastt.streamlit.app/)
+[Click here to try the app!](https://movie-recommendation-system-lknhvdju4agg3wnzzpastt.streamlit.app/)
 
 ## 🧠 How It Works
 1. Combines movie genres, keywords, overview into single tags
