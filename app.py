@@ -1,11 +1,20 @@
 import streamlit as st
+import pandas as pd
 import pickle
 import requests
 TMDB_API_KEY = st.secrets["TMDB_API_KEY"]
 from difflib import get_close_matches
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
 
 movies = pickle.load(open('movies.pkl', 'rb'))
-similarity = pickle.load(open('similarity.pkl', 'rb'))
+@st.cache_resource  # ← this caches it so it only runs once!
+def get_similarity():
+    cv = CountVectorizer(max_features=5000, stop_words='english')
+    vectors = cv.fit_transform(movies['tags']).toarray()
+    return cosine_similarity(vectors)
+
+similarity = get_similarity()
 
 def recommend_by_genre(movie_name):
     
