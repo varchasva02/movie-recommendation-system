@@ -106,7 +106,7 @@ if st.button("Recommend 🎬"):
         close_match = get_close_matches(search_query.lower(), 
                                        all_titles, 
                                        n=1, 
-                                       cutoff=0.6)
+                                       cutoff=0.7)
         
         if close_match:
             # Found a close match!
